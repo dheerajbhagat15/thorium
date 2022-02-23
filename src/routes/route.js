@@ -3,12 +3,12 @@ const res = require('express/lib/response');
 const router = express.Router();
 
 router.get('/movies', function(req, res) {
-   res.send('["heropanti","titanic","spiderMan","ironman","Dabang"]')
+   res.send('["Roja","Bombay","Rangeela","Dilse","Sathiya"]')
 })
 
 router.get('/movies/:movieid', function(req,res){
 
-    let movi=["heropanti","titanic","spiderMan","ironman","Dabang"]
+    let movi=["Roja","Bombay","Rangeela","Dilse","Sathiya"]
     let num = req.params.movieid
     if(num>movi.length-1){
         res.send("invalid input")
@@ -18,7 +18,7 @@ router.get('/movies/:movieid', function(req,res){
 })
 
 router.get('/films/:filmid', function(req,res){
-    let movies=[ {id: 1, name: 'The Shining'}, {id: 2, name: 'Incendies'}, {id: 3,name: 'Rang de Basanti'}, {id: 4, name: 'Finding Demo'}]
+    let movies=[ {id: 1, name: 'The Volverine'}, {id: 2, name: 'Terminator'}, {id: 3,name: 'Matrix'}, {id: 4, name: 'Ironman'}]
      let num = req.params.filmid
      let cnt = false;
 
