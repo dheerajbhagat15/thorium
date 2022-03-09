@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken")
 let MDwear = function (req, res, next) {
 
-   try {
+    
 
     let token = req.headers["x-auth-token"];
     if (!token) {
@@ -13,9 +13,12 @@ let MDwear = function (req, res, next) {
     if (!decodedToken){
         return res.send({ status: false, msg: "token is invalid" });
     }
+    if(decodedToken.userId!==req.params.userId){
+        return res.send({msg : "You must have to login first"})
+    }
     next()
        
-   } catch (error){ res.send(error) }   
+   
        
 }
 

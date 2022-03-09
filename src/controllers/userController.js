@@ -21,7 +21,7 @@ const loginUser = async function (req, res) {
   if (!user)
     return res.send({
       status: false,
-      msg: "username or the password is not corerct",
+      msg: "username or the password is not correct",
     });
 
 
@@ -74,6 +74,17 @@ const deleteUser = async function (req, res) {
   res.send({msg :"user deleted Succesfully" ,deleteUser })
 
 }
+const createPost = async function (req, res){
+  let userId = req.params.userId
+  let user = await userModel.findById(userId)
+  let message = req.body
+  let updatedPosts = user.posts
+  updatedPosts.push(message)
+  let updatedUser = await userModel.findOneAndUpdate({_id: user._id},{posts: updatedPosts}, {new: true})
+  return res.send({status: true, data: updatedUser})
+
+}
+ 
 
 
 module.exports.createUser = createUser;
@@ -81,3 +92,4 @@ module.exports.getUserData = getUserData;
 module.exports.updateUser = updateUser;
 module.exports.loginUser = loginUser;
 module.exports.deleteUser = deleteUser;
+module.exports.createPost = createPost;
