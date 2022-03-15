@@ -24,9 +24,9 @@ Create API's to do each of the following:
                     - Sort the cities  ["Bengaluru","Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"] in order of their increasing temperature
                     result should look something like this
                     [
-                    {city:"London", temp: 280},
-                    {city:"Moscow", temp: 290},
-                    {city:"Bangalore", temp: 301.2},
+                    {
+                        
+                    },
                     .......
                     ]
 
